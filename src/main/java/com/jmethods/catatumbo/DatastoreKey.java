@@ -97,5 +97,9 @@ public interface DatastoreKey {
 	 */
 	// Don't really like this here.
 	com.google.cloud.datastore.Key nativeKey();
+	
+	public String getName();
+	
+	public DatastoreKey getParent();
 
 }

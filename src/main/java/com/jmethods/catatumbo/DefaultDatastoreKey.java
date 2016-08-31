@@ -112,4 +112,16 @@ public class DefaultDatastoreKey implements DatastoreKey {
 		return this.key.equals(that.key);
 	}
 
+	@Override
+	public String getName() {
+		return this.name();
+	}
+
+	@Override
+	public DatastoreKey getParent() {
+		return this.parent();
+	}
+	
+	
+	
 }
