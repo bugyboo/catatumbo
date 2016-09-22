@@ -64,6 +64,7 @@ import com.jmethods.catatumbo.entities.LongId;
 import com.jmethods.catatumbo.entities.LongId2;
 import com.jmethods.catatumbo.entities.LongListField;
 import com.jmethods.catatumbo.entities.LongObject;
+import com.jmethods.catatumbo.entities.MapObject;
 import com.jmethods.catatumbo.entities.ParentEntity;
 import com.jmethods.catatumbo.entities.ShortField;
 import com.jmethods.catatumbo.entities.ShortObject;
@@ -609,6 +610,26 @@ public class EntityManagerTest {
 		entity = em.load(CharArrayField.class, entity.getId());
 		assertTrue(entity.getId() > 0 && entity.getPassword() == null);
 	}
+	
+	@Test
+	public void testInsertMapObject() {
+		Map<String, String> properties = new HashMap<>();
+		properties.put("favourite color", "blue");
+		properties.put("hoppy", "swiming");
+		properties.put("car", "no");
+		MapObject mapObject = new MapObject();
+		mapObject = em.insert(mapObject);
+		mapObject = em.load(MapObject.class, mapObject.getId());
+		assertTrue(mapObject.getId() > 0 && properties.equals(mapObject.getProperties()));
+	}
+	
+	@Test
+	public void testInsertMapObject_Null() {
+		MapObject mapObject = new MapObject();
+		mapObject = em.insert(mapObject);
+		mapObject = em.load(MapObject.class, mapObject.getId());
+		assertTrue(mapObject.getId() > 0 && mapObject.getProperties() == null);
+	}	
 
 	@Test
 	public void testInsertStringListField() {

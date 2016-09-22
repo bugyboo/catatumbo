@@ -18,6 +18,7 @@ package com.jmethods.catatumbo.impl;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.jmethods.catatumbo.DatastoreKey;
 import com.jmethods.catatumbo.GeoLocation;
@@ -110,6 +111,11 @@ public enum DataType {
 	 * List object
 	 */
 	LIST(List.class, ListConverter.getInstance()),
+	
+	/**
+	 * Map object (stored as Embedded Entity in Cloud Datastore)
+	 */	
+	MAP(Map.class, MapConverter.getInstance()),
 
 	/**
 	 * Key (for an entity's full key, parent key, key references to other

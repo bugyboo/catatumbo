@@ -3,7 +3,7 @@
 
 	<groupId>com.jmethods</groupId>
 	<artifactId>catatumbo</artifactId>
-	<version>0.2.2-SNAPSHOT</version>
+	<version>0.2.3</version>
 	<packaging>jar</packaging>
 	<name>Catatumbo</name>
 	<description>
@@ -59,8 +59,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.google.cloud</groupId>
-			<artifactId>gcloud-java-datastore</artifactId>
-			<version>0.2.8</version>
+			<artifactId>google-cloud-datastore</artifactId>
+			<version>0.3.0</version>
 		</dependency>
 	</dependencies>
 
